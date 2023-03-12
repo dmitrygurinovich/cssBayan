@@ -1,0 +1,52 @@
+*,
+body {
+    margin: 0;
+    font-size: 18px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.bayan {
+    margin: 0 auto;
+    max-width: 1920px;
+}
+
+.bayan__item {
+    width: 100%;
+    border: 1px solid rgb(233, 233, 233);
+    transition: background-color 0.5s;
+    border-radius: 5px;
+}
+
+.item__title:hover {
+    background-color: rgb(214, 213, 213);
+    transition: background-color 0.5s;
+    border-radius: 5px;
+}
+
+.item__title {
+    display: block;
+    padding: 10px 10px;
+    cursor: pointer;
+}
+
+.item__input {
+    appearance: none;
+    position: absolute;
+}
+
+.item__input:checked + .item__text {
+    display: block;
+    transition: opacity 0.5s;
+}
+
+.item__text {
+    font-size: 14px;
+    display: none;
+    padding: 10px 10px;
+    text-align: justify;
+}
