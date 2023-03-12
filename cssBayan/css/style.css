@@ -12,7 +12,9 @@ body {
 
 .bayan {
     margin: 0 auto;
-    max-width: 1920px;
+    max-width: 1960px;
+    min-width: 320px;
+    padding: 0 20px;
 }
 
 .bayan__item {
@@ -24,14 +26,24 @@ body {
 
 .item__title:hover {
     background-color: rgb(214, 213, 213);
-    transition: background-color 0.5s;
+    transition: background-color 0.3s;
     border-radius: 5px;
 }
 
 .item__title {
-    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 10px 10px;
     cursor: pointer;
+}
+
+.status__icon {
+    width: 15px;
+    height: 15px;
+    background-image: url('../icons/plus.svg');
+    background-size: cover;
+    transition: background 0.3s;
 }
 
 .item__input {
@@ -39,9 +51,19 @@ body {
     position: absolute;
 }
 
-.item__input:checked + .item__text {
+.item__input:checked ~ .item__text {
     display: block;
-    transition: opacity 0.5s;
+    transition: opacity 0.3s;
+}
+
+.item__input:checked ~ .item__title {
+    background-color: rgb(214, 213, 213);
+    border-radius: 5px;
+}
+
+.item__input:checked ~ .item__title .status__icon {
+    background-image: url('../icons/minus.svg');
+    transition: background 0.3s;
 }
 
 .item__text {
