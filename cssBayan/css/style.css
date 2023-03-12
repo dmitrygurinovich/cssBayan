@@ -10,6 +10,12 @@ body {
     box-sizing: border-box;
 }
 
+h1 {
+    margin: 0 auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
 .bayan {
     margin: 0 auto;
     max-width: 1960px;
@@ -19,15 +25,7 @@ body {
 
 .bayan__item {
     width: 100%;
-    border: 1px solid rgb(233, 233, 233);
-    transition: background-color 0.5s;
-    border-radius: 5px;
-}
-
-.item__title:hover {
-    background-color: rgb(214, 213, 213);
-    transition: background-color 0.3s;
-    border-radius: 5px;
+    border-top: 1px solid rgb(233, 233, 233);
 }
 
 .item__title {
@@ -36,6 +34,8 @@ body {
     align-items: center;
     padding: 10px 10px;
     cursor: pointer;
+    color: rgb(118, 118, 250);
+    font-weight: 900;
 }
 
 .status__icon {
@@ -43,7 +43,7 @@ body {
     height: 15px;
     background-image: url('../icons/plus.svg');
     background-size: cover;
-    transition: background 0.3s;
+    transition: background 0.5s;
 }
 
 .item__input {
@@ -51,24 +51,28 @@ body {
     position: absolute;
 }
 
-.item__input:checked ~ .item__text {
-    display: block;
-    transition: opacity 0.3s;
-}
-
-.item__input:checked ~ .item__title {
-    background-color: rgb(214, 213, 213);
-    border-radius: 5px;
-}
-
-.item__input:checked ~ .item__title .status__icon {
-    background-image: url('../icons/minus.svg');
-    transition: background 0.3s;
-}
-
-.item__text {
+.item__mem {
     font-size: 14px;
     display: none;
     padding: 10px 10px;
-    text-align: justify;
+}
+
+.mem__image {
+    height: 300px;
+    width: auto;
+}
+
+.item__input:checked~.item__mem {
+    display: flex;
+    justify-content: center;
+    transition: opacity 0.3s;
+}
+
+.item__input:checked~.item__title {
+    color: black;
+}
+
+.item__input:checked~.item__title .status__icon {
+    background-image: url('../icons/minus.svg');
+    transition: background 0.5s;
 }
